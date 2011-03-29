@@ -6,23 +6,53 @@ From the command line, navigate to the folder containing the binary Reuleaux fil
 
 The following is a key for the file extensions of the output created by running Reuleaux on a PSC. SVG files can be viewed with a standard web browser. Node and .ele files can be viewed using Triangle[1]. The .log file can be viewed with a standard text editor.
 
-  *.log The logfile containing information about the mesh from several steps of execution.
-  *.inp.svg The SVG file of the input provided. Often will not display all features because of later initialization of the bounding box.
-  *.pre.svg The SVG file of the input with presplit points added but before initialization of the bounding box.
-  *.fsa.svg The SVG file of the input after detecting small angles and initializing the bounding box.
-  *.ini.svg The SVG file of the input after initializing the Delaunay triangulation.
-  *.out.svg The SVG file of the final mesh triangulation.
-  *.out.node The Triangle file of the final mesh triangulation.
-  *.out.ele The Triangle file of the final mesh triangulation.
-  *.int.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features.
-  *.rem.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features and inside of small angle protection circles.
-  *.zoom.svg The SVG file of the final triangulation zoomed in on a selected portion.
+  * .log The logfile containing information about the mesh from several steps of execution.
+  * .inp.svg The SVG file of the input provided. Often will not display all features because of later initialization of the bounding box.
+  * .pre.svg The SVG file of the input with presplit points added but before initialization of the bounding box.
+  * .fsa.svg The SVG file of the input after detecting small angles and initializing the bounding box.
+  * .ini.svg The SVG file of the input after initializing the Delaunay triangulation.
+  * .out.svg The SVG file of the final mesh triangulation.
+  * .out.node The Triangle file of the final mesh triangulation.
+  * .out.ele The Triangle file of the final mesh triangulation.
+  * .int.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features.
+  * .rem.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features and inside of small angle protection circles.
+  * .zoom.svg The SVG file of the final triangulation zoomed in on a selected portion.
 
 The script reuleauxAll.sh is run by execution from a command line. It will run all data files in the ‘data’ folder that is located in the same directory as the directory containing reuleauxAll.sh and reuleauxDir.sh.
 
-= Details =
+= PSC File Format =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The .psc file format is an ASCII text file that specifies a piecewise smooth complex. Its goal is to fully describe a PSC including the intersection points between features. Note that the parser for a PSC file ignores any whitespace except to use it for separating characters. The text formatting, in particular newlines, is only for the user. Integer values can be entered instead of double values without the need for decimal point and following zero. It is critical to ensure that in the input PSC that all intersection points are explicitly specified. Failure to do so will cause the code to crash.
+
+A .psc file consists of 4 sections:
+  # PSC
+  # Dimension
+  # Points
+  # Curves
+
+==Section 1: PSC section==
+
+This section identifies the file type.
+
+First line: PSC
+
+==Section 2: Dimension section==
+
+This section specifies the dimensions of the PSC; the Reauleaux code only accepts two-dimensional PSCs.
+
+First line: DIMENSION 2
+
+==Section 3: Points section==
+
+This section gives the coordinates of all the points in the PSC. It must include the points of all intersections of the curves defined in the PSC.
+
+First line: POINTS < #points >
+
+Remaining lines: < pointid >< xcoord >< ycoord >
+
+
+< #points > is an integer specify the number of points in the PSC.
+
+< pointid > should be a unique integer identifier.
+
+< xcoord > < ycoord > are the double values for the x and y coordinates of the point.
