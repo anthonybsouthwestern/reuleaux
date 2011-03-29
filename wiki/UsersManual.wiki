@@ -101,7 +101,7 @@ _curvedata_ is dependent on the curve type and is specified in the following all
 
 CURVES 6
 
-==Line Segments==
+===Line Segments===
 
 A line segment is characterized by:
 
