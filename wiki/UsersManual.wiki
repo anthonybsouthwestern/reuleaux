@@ -4,7 +4,7 @@
 
 From the command line, navigate to the folder containing the binary Reuleaux file. Execute this file followed by the full filename with extension of the PSC file to be meshed. This file must end with the extension .psc. If a configuration file is being used, it must be in the same directory as the PSC file, and must end with the extension .cfg. The results will be stored in files located in the same directory as the PSC file.
 
-The following is a key for the file extensions of the output created by running Reuleaux on a PSC. SVG files can be viewed with a standard web browser. Node and .ele files can be viewed using Triangle. The .log file can be viewed with a standard text editor.
+The following is a key for the file extensions of the output created by running Reuleaux on a PSC. SVG files can be viewed with a standard web browser. Node and .ele files can be viewed using Triangle[1]. The .log file can be viewed with a standard text editor.
 
   *.log The logfile containing information about the mesh from several steps of execution.
   *.inp.svg The SVG file of the input provided. Often will not display all features because of later initialization of the bounding box.
@@ -18,7 +18,7 @@ The following is a key for the file extensions of the output created by running 
   *.rem.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features and inside of small angle protection circles.
   *.zoom.svg The SVG file of the final triangulation zoomed in on a selected portion.
 
-
+The script reuleauxAll.sh is run by execution from a command line. It will run all data files in the ‘data’ folder that is located in the same directory as the directory containing reuleauxAll.sh and reuleauxDir.sh.
 
 = Details =
 
