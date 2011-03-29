@@ -46,13 +46,68 @@ First line: DIMENSION 2
 
 This section gives the coordinates of all the points in the PSC. It must include the points of all intersections of the curves defined in the PSC.
 
-First line: POINTS < #points >
+First line: POINTS _#points_
 
-Remaining lines: < pointid >< xcoord >< ycoord >
+Remaining lines: _pointid xcoord ycoord_
 
 
-< #points > is an integer specify the number of points in the PSC.
+_#points_ is an integer specify the number of points in the PSC.
 
-< pointid > should be a unique integer identifier.
+_pointid_ should be a unique integer identifier.
 
-< xcoord > < ycoord > are the double values for the x and y coordinates of the point.
+_xcoord ycoord_ are the double values for the x and y coordinates of the point.
+
+*Example:* Specifies 8 points, 00 is on the origin, 01 is one unit to the right along the x axis, and 02 is one unit up and two to the right of 00.
+
+POINTS 8
+
+00 0.0 0.0
+
+01 1.0 0.0
+
+02 2.0 1.0
+
+03 2.0 0.0
+
+04 0.0 1.5
+
+05 3.0 1.5
+
+06 0.0 4.0
+
+07 3.0 4.0
+
+==Section 4: Curves section==
+
+This section defines all of the curves and curve segments in the PSC.
+
+First line: CURVES _#curves_
+
+Remaining lines A: _curveid curvetype curvedata_
+
+Remaining lines B: _curvedatacontinued_
+
+Remaining lines C: _curvedatacontinued_
+
+_#curves_ is an integer specify the number of curves in the PSC.
+
+_curveid_ should be a integer identifier unique for each curve.
+
+_curvetype_ is one of the following types that are enumerated below: linesegment, circle, arc, bezier, bezier3, or nbezier and are described in their corresponding section.
+
+_curvedata_ is dependent on the curve type and is specified in the following allowed curve types. Line C is only used with n-degree Be ́zier curves.
+
+*Example A:* Specifies 6 curves.
+
+CURVES 6
+
+==Line Segments==
+
+A line segment is characterized by:
+
+Line A: _curveid_ linesegment _#segments_
+Line B: _pointlist_
+
+_#segments_ is a positive integer specifying the number of segments in a straight line separated by points.
+
+_pointlist_ is a sequence of integer identifiers from the specified list of points in the points section A. There must be a minimum of two points listed, and the number of points specified is equal to one more than the number of segments.
