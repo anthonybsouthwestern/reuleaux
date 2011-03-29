@@ -6,17 +6,17 @@ From the command line, navigate to the folder containing the binary Reuleaux fil
 
 The following is a key for the file extensions of the output created by running Reuleaux on a PSC. SVG files can be viewed with a standard web browser. Node and .ele files can be viewed using Triangle. The .log file can be viewed with a standard text editor.
 
-.log The logfile containing information about the mesh from several steps of execution.
-.inp.svg The SVG file of the input provided. Often will not display all features because of later initialization of the bounding box.
-.pre.svg The SVG file of the input with presplit points added but before initialization of the bounding box.
-.fsa.svg The SVG file of the input after detecting small angles and initializing the bounding box.
-.ini.svg The SVG file of the input after initializing the Delaunay triangulation.
-.out.svg The SVG file of the final mesh triangulation.
-.out.node The Triangle file of the final mesh triangulation.
-.out.ele The Triangle file of the final mesh triangulation.
-.int.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features.
-.rem.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features and inside of small angle protection circles.
-.zoom.svg The SVG file of the final triangulation zoomed in on a selected portion.
+*.log The logfile containing information about the mesh from several steps of execution.
+*.inp.svg The SVG file of the input provided. Often will not display all features because of later initialization of the bounding box.
+*.pre.svg The SVG file of the input with presplit points added but before initialization of the bounding box.
+*.fsa.svg The SVG file of the input after detecting small angles and initializing the bounding box.
+*.ini.svg The SVG file of the input after initializing the Delaunay triangulation.
+*.out.svg The SVG file of the final mesh triangulation.
+*.out.node The Triangle file of the final mesh triangulation.
+*.out.ele The Triangle file of the final mesh triangulation.
+*.int.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features.
+*.rem.svg The SVG file of the final mesh triangulation after removing the mesh outside of exterior features and inside of small angle protection circles.
+*.zoom.svg The SVG file of the final triangulation zoomed in on a selected portion.
 
 
 
