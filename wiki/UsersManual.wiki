@@ -155,4 +155,44 @@ _pointlist_ is a sequence of integer identifiers for intersection points listed 
 
 The radius of the arc does not need to be specified because it can be calculated by the distance between either of the endpoints and the center point of the arc.
 
-*Example:* Specifies an arc from point 01 to 02, centered at (2.0, 0.0) thus giving it a radius
+*Example:* Specifies an arc from point 01 to 02, centered at (2.0, 0.0) thus giving it a radius of one unit. No points other than the endpoints are added to the curve.
+
+102 arc 01 02 2.0 0.0 0
+
+===Quadratic Be ́zier Curves===
+
+A quadratic Be ́zier curve is characterized by:
+
+Line A: _curveid_ bezier _leftpoint rightpoint xctrl yctrl_
+
+Line B: _#points pointlist_
+
+_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the quadratic Be ́zier curve respectively.
+
+_xctrl yctrl_ are the double values for the coordinates of the control point of the quadratic Be ́zier curve.
+
+_#points_ is an integer specifying the number of intersection points with other features on the quadratic Be ́zier curve.
+
+_pointlist_ is a sequence of integer identifiers for intersection points listed in the points section.
+
+*Example:* Specifies a quadratic Be ́zier curve from point 02 to 03 that has a control point at (5.0, 0.5). No points other than the endpoints were added to the curve.
+
+103 bezier 02 03 5.0 0.5 0
+
+===Cubic Be ́zier Curves===
+
+A cubic Be ́zier curve is characterized by:
+
+Line A: _curveid_ bezier3 _leftpoint rightpoint xyctrl1 xyctrl2_
+
+Line B: _#points pointlist_
+
+_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the cubic Be ́zier curve respectively.
+
+_xyctrl1_ contains the two double values representing the coordinates of the location of the first control point of the cubic Be ́zier curve.
+
+_xyctrl2_ has the coordinates of the second control point.
+
+_#points_ is an integer specifying the number of intersection points with other features on the cubic Be ́zier curve.
+
+_pointlist_ is a sequence of integer identifiers for intersection points listed in the points section.
