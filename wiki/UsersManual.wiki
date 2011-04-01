@@ -97,7 +97,7 @@ _curvetype_ is one of the following types that are enumerated below: linesegment
 
 _curvedata_ is dependent on the curve type and is specified in the following allowed curve types. Line C is only used with n-degree Be ́zier curves.
 
-*Example A:* Specifies 6 curves.
+*Example:* Specifies 6 curves.
 
 CURVES 6
 
@@ -106,8 +106,53 @@ CURVES 6
 A line segment is characterized by:
 
 Line A: _curveid_ linesegment _#segments_
+
 Line B: _pointlist_
 
 _#segments_ is a positive integer specifying the number of segments in a straight line separated by points.
 
 _pointlist_ is a sequence of integer identifiers from the specified list of points in the points section A. There must be a minimum of two points listed, and the number of points specified is equal to one more than the number of segments.
+
+*Example:* Specifies one straight line 100 with two segments, from point 00 to point 01 to point 03.
+
+100 linesegment 2 00 01 03
+
+===Circles===
+
+A circle is characterized by:
+
+Line A: _curveid_ circle _xcoord ycoord radius_
+
+Line B: _#points pointlist_
+
+_xcoord ycoord_ are double values for the coordinates of the center point of the circle.
+
+_radius_ is a double value for the radius of the circle.
+
+_#points_ is an integer specifying the number of intersection points with other features on the circle.
+
+_pointlist_ is a sequence of integer identifiers for intersection points listed in the points section.
+
+*Example:* Specifies a circle with id 101, centered on the origin with a radius of one unit. There is one point on the circle, 01.
+
+101 circle 0.0 0.0 1.0 1 01
+
+===Circular Arcs===
+
+A circular arc is characterized by:
+
+Line A: _curveid_ arc _leftpoint rightpoint xcoord ycoord_
+
+Line B: _#points pointlist_
+
+_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the arc respectively. The right endpoint is clock-wise along the circle from the left endpoint.
+
+_xcoord ycoord_ are double values for the coordinates of the center point of the circle describing the arc.
+
+_#points_ is an integer specifying the number of intersection points with other features on the circular arc.
+
+_pointlist_ is a sequence of integer identifiers for intersection points listed in the points section.
+
+The radius of the arc does not need to be specified because it can be calculated by the distance between either of the endpoints and the center point of the arc.
+
+*Example:* Specifies an arc from point 01 to 02, centered at (2.0, 0.0) thus giving it a radius
