@@ -264,3 +264,91 @@ The maximum allowed total variation in orientation in radians when presplitting 
 ===Maxiterations = (integer, -1)===
 
 Maximum number of iterations allowed during Ruppert’s Algorithm. The default value of -1 means there is no limitation.
+
+===ExactInsphere = (boolean, true)===
+
+Use exact arithmetic instead of standard floating point arithmetic. The code is more stable with the default of exact arithmetic.
+
+===RemoveBoundingBox = (boolean, false)===
+
+If this option is set to true, the algorithm will remove all triangles associated with the bounding box after processing. If the input is not closed curves this will remove all of the mesh.
+
+===printNBezierWSeg = (boolean, false)===
+
+If this option is true, n-degree Be ́zier curves are displayed in the .svg files using 100, small straight line segments to approximate the curve. If false, the n-degree Be ́zier curves are output using quadratic Be ́ziers curves between points on the n-degree Be ́zier curve.
+
+=Full Example=
+
+==From file example.psc==
+
+PSC
+
+DIMENSION 2
+
+POINTS 8
+
+00 0.0 0.0
+
+01 1.0 0.0
+
+02 2.0 1.0
+
+03 2.0 0.0
+
+04 0.0 1.5
+
+05 3.0 1.5
+
+06 0.0 4.0
+
+07 3.0 4.0
+
+CURVES 6
+
+100 linesegment 1
+
+00 01
+
+101 circle 0.0 0.0 1.0
+
+1 01
+
+102 arc 01 02 2.0 0.0
+
+0
+
+103 bezier 02 03 5.0 0.5
+
+0
+
+104 bezier3 04 05 1.0 4.0 2.0 0.5
+
+0
+
+105 nbezier 06 07 5 0
+
+0.5 8.0 1.0 2.0 1.5 2.0 2.7 8.0
+
+==From file example.cfg==
+
+[Reuleaux]
+
+Epsilon = .000000001
+
+Infinity = 1000000000.0
+
+BoundingBoxRatio = 6.0 ; size of the bounding box relative to the data
+
+MaxRadiusEdgeRatio = 1.2 ; output quality
+
+MaxOutputRadius = -1
+
+Maxiterations = -1
+
+ExactInsphere = false
+
+RemoveBoundingBox = false
+
+PresplitVariation = -1.0
+
+printNBezierWSeg = false
