@@ -38,7 +38,7 @@ First line: PSC
 
 ==Section 2: Dimension section==
 
-This section specifies the dimensions of the PSC; the Reauleaux code only accepts two-dimensional PSCs.
+This section specifies the dimensions of the PSC; the Reuleaux code only accepts two-dimensional PSCs.
 
 First line: DIMENSION 2
 
@@ -95,7 +95,7 @@ _curveid_ should be a integer identifier unique for each curve.
 
 _curvetype_ is one of the following types that are enumerated below: linesegment, circle, arc, bezier, bezier3, or nbezier and are described in their corresponding section.
 
-_curvedata_ is dependent on the curve type and is specified in the following allowed curve types. Line C is only used with n-degree Be ́zier curves.
+_curvedata_ is dependent on the curve type and is specified in the following allowed curve types. Line C is only used with n-degree Be zier curves.
 
 *Example:* Specifies 6 curves.
 
