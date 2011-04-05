@@ -331,7 +331,7 @@ CURVES 6
 
 ==From file example.cfg==
 
-[Reuleaux]
+{{{[Reuleaux]
 
 Epsilon = .000000001
 
@@ -351,4 +351,4 @@ RemoveBoundingBox = false
 
 PresplitVariation = -1.0
 
-printNBezierWSeg = false
+printNBezierWSeg = false}}}
