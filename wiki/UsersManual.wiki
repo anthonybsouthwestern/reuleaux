@@ -44,7 +44,7 @@ First line: DIMENSION 2
 
 ==Section 3: Points section==
 
-This section gives the coordinates of all the points in the PSC. It must include the points of all intersections of the curves defined in the PSC.
+This section gives the coordinates of all the points in the PSC. It must include the points of all intersections of the curves defined in the PSC. The program requires at least one point to be entered to generate a mesh.
 
 First line: POINTS _#points_
 
