@@ -95,7 +95,7 @@ _curveid_ should be a integer identifier unique for each curve.
 
 _curvetype_ is one of the following types that are enumerated below: linesegment, circle, arc, bezier, bezier3, or nbezier and are described in their corresponding section.
 
-_curvedata_ is dependent on the curve type and is specified in the following allowed curve types. Line C is only used with n-degree Be zier curves.
+_curvedata_ is dependent on the curve type and is specified in the following allowed curve types. Line C is only used with n-degree Bézier curves.
 
 *Example:* Specifies 6 curves.
 
@@ -159,53 +159,53 @@ The radius of the arc does not need to be specified because it can be calculated
 
 102 arc 01 02 2.0 0.0 0
 
-===Quadratic Be ́zier Curves===
+===Quadratic Bézier Curves===
 
-A quadratic Be ́zier curve is characterized by:
+A quadratic Bézier curve is characterized by:
 
 Line A: _curveid_ bezier _leftpoint rightpoint xctrl yctrl_
 
 Line B: _#points pointlist_
 
-_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the quadratic Be ́zier curve respectively.
+_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the quadratic Bézier curve respectively.
 
-_xctrl yctrl_ are the double values for the coordinates of the control point of the quadratic Be ́zier curve.
+_xctrl yctrl_ are the double values for the coordinates of the control point of the quadratic Bézier curve.
 
-_#points_ is an integer specifying the number of intersection points with other features on the quadratic Be ́zier curve.
+_#points_ is an integer specifying the number of intersection points with other features on the quadratic Bézier curve.
 
 _pointlist_ is a sequence of integer identifiers for intersection points listed in the points section.
 
-*Example:* Specifies a quadratic Be ́zier curve from point 02 to 03 that has a control point at (5.0, 0.5). No points other than the endpoints were added to the curve.
+*Example:* Specifies a quadratic Bézier curve from point 02 to 03 that has a control point at (5.0, 0.5). No points other than the endpoints were added to the curve.
 
 103 bezier 02 03 5.0 0.5 0
 
-===Cubic Be ́zier Curves===
+===Cubic Bézier Curves===
 
-A cubic Be ́zier curve is characterized by:
+A cubic Bézier curve is characterized by:
 
 Line A: _curveid_ bezier3 _leftpoint rightpoint xyctrl1 xyctrl2_
 
 Line B: _#points pointlist_
 
-_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the cubic Be ́zier curve respectively.
+_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the cubic Bézier curve respectively.
 
-_xyctrl1_ contains the two double values representing the coordinates of the location of the first control point of the cubic Be ́zier curve.
+_xyctrl1_ contains the two double values representing the coordinates of the location of the first control point of the cubic Bézier curve.
 
 _xyctrl2_ has the coordinates of the second control point.
 
-_#points_ is an integer specifying the number of intersection points with other features on the cubic Be ́zier curve.
+_#points_ is an integer specifying the number of intersection points with other features on the cubic Bézier curve.
 
 _pointlist_ is a sequence of integer identifiers for intersection points listed in the points section.
 
-*Example:* Specifies a cubic Be ́zier curve from 04 to 05 with first control point (1.0,4.0), and second control point (2.00.5). No points other than the endpoints were added to the curve.
+*Example:* Specifies a cubic Bézier curve from 04 to 05 with first control point (1.0,4.0), and second control point (2.00.5). No points other than the endpoints were added to the curve.
 
 104 bezier3 04 05 1.0 4.0 2.0 0.5
 
 0
 
-===n-Degree Be ́zier Curves===
+===n-Degree Bézier Curves===
 
-A n-degree Be ́zier curve is characterized by:
+A n-degree Bézier curve is characterized by:
 
 Line A: _curveid_ nbezier _leftpoint rightpoint degree #points_
 
@@ -213,17 +213,17 @@ Line B: _x, ycoordlist_
 
 Line C: _pointlist_
 
-_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the n-degree Be ́zier curve respectively.
+_leftpoint rightpoint_ are the integer identifiers for left and right endpoints of the n-degree Bézier curve respectively.
 
-_degree_ is the degree of the curve and specifies the number of control points for the Be ́zier curve. The number of control points is equal to one less than the degree of the Be ́zier curve.
+_degree_ is the degree of the curve and specifies the number of control points for the Bézier curve. The number of control points is equal to one less than the degree of the Bézier curve.
 
-_#points_ is an integer specifying the number of intersection points with other features on the n-degree Be ́zier curve.
+_#points_ is an integer specifying the number of intersection points with other features on the n-degree Bézier curve.
 
-_x, ycoordlist_ is a list of pairs of doubles that specify the locations of the control points for the n-degree Be ́zier curve.
+_x, ycoordlist_ is a list of pairs of doubles that specify the locations of the control points for the n-degree Bézier curve.
 
 _pointlist_ is a sequence of integer identifiers for intersection points listed in the points section.
 
-*Example:* Specifies a Be ́zier curve of degree 5, from point 06 to 07, and with control points (0.5, 8.0), (1.0, 2.0), (1.5, 2.0), and (2.7, 8.0). No points other than the endpoints were added to the curve.
+*Example:* Specifies a Bézier curve of degree 5, from point 06 to 07, and with control points (0.5, 8.0), (1.0, 2.0), (1.5, 2.0), and (2.7, 8.0). No points other than the endpoints were added to the curve.
 
 105 nbezier 06 07 5 0
 
@@ -259,7 +259,7 @@ The size of the bounding box used when generating the mesh. Bounding box will be
 
 *PresplitVariation '=' (double, -1.0)*
 
-The maximum allowed total variation in orientation in radians when presplitting curves. Default value of -1.0 splits circles and arcs with total variation greater than π/2 radians and Be ́zier curves with total variation greater than π/4 radians.
+The maximum allowed total variation in orientation in radians when presplitting curves. Default value of -1.0 splits circles and arcs with total variation greater than π/2 radians and Bézier curves with total variation greater than π/4 radians.
 
 *Maxiterations '=' (integer, -1)*
 
@@ -275,7 +275,7 @@ If this option is set to true, the algorithm will remove all triangles associate
 
 *printNBezierWSeg '=' (boolean, false)*
 
-If this option is true, n-degree B &eacute zier curves are displayed in the .svg files using 100, small straight line segments to approximate the curve. If false, the n-degree Be ́zier curves are output using quadratic Be ́ziers curves between points on the n-degree Be ́zier curve.
+If this option is true, n-degree Bézier curves are displayed in the .svg files using 100, small straight line segments to approximate the curve. If false, the n-degree Bézier curves are output using quadratic Béziers curves between points on the n-degree Bézier curve.
 
 =Full Example=
 
