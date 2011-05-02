@@ -237,43 +237,63 @@ The .cfg file format is used to set different configuration options for the mesh
 
 Each specifies a type and the default option.
 
-*Epsilon '=' (double, 1.0e-12)*
+{{{
+Epsilon = (double, 1.0e-12)
+}}}
 
 A threshold for numerical zero.
 
-*Infinity '=' (double, 1.0e12)*
+{{{
+Infinity = (double, 1.0e12)
+}}}
 
 A threshold for numerical infinity.
 
-*MaxRadiusEdgeRatio '=' (double, 1.5)*
+{{{
+MaxRadiusEdgeRatio = (double, 1.5)
+}}}
 
 The maximum allowable circumradius to shortest edge ratio for any triangle in the triangulation.
 
-*MaxOutputRadius '=' (double, -1.0)*
+{{{
+MaxOutputRadius = (double, -1.0)
+}}}
 
 A user specified size parameter for the maximum allowable output circumradius. The final mesh will contain no triangle with circumradius larger than the specified value. The default value of -1.0 means no restriction.
 
-*BoundingBoxRatio '=' (double, 6.0)*
+{{{
+BoundingBoxRatio = (double, 6.0)
+}}}
 
 The size of the bounding box used when generating the mesh. Bounding box will be that many times larger than the farthest distance between input features in the x or y directions respectively. To generate a mesh within the bounding box, use at least 6.
 
-*PresplitVariation '=' (double, -1.0)*
+{{{
+PresplitVariation = (double, -1.0)
+}}}
 
 The maximum allowed total variation in orientation in radians when presplitting curves. Default value of -1.0 splits circles and arcs with total variation greater than π/2 radians and Bézier curves with total variation greater than π/4 radians.
 
-*Maxiterations '=' (integer, -1)*
+{{{
+Maxiterations = (integer, -1)
+}}}
 
 Maximum number of iterations allowed during Ruppert’s Algorithm. The default value of -1 means there is no limitation.
 
-*ExactInsphere '=' (boolean, true)*
+{{{
+ExactInsphere = (boolean, true)
+}}}
 
 Use exact arithmetic instead of standard floating point arithmetic. The code is more stable with the default of exact arithmetic.
 
-*RemoveBoundingBox '=' (boolean, false)*
+{{{
+RemoveBoundingBox = (boolean, false)
+}}}
 
 If this option is set to true, the algorithm will remove all triangles associated with the bounding box after processing. If the input is not closed curves this will remove all of the mesh.
 
-*printNBezierWSeg '=' (boolean, false)*
+{{{
+printNBezierWSeg = (boolean, false)
+}}}
 
 If this option is true, n-degree Bézier curves are displayed in the .svg files using 100, small straight line segments to approximate the curve. If false, the n-degree Bézier curves are output using quadratic Béziers curves between points on the n-degree Bézier curve.
 
