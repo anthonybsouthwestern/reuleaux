@@ -1,0 +1,35 @@
+#define PI 3.14159265358979323846
+
+#include "common.h"
+#include "point.h"
+#include "points.h"
+#include "triangle.h"
+#include "trianglepool.h"
+#include "curve.h"
+#include "segment.h"
+#include "circle.h"
+#include "bezier.h"
+#include "bezier2.h"
+#include "bezier3.h"
+#include "nbezier.h"
+#include "arc.h"
+#include "triangulation.h"
+#include "psc.h"
+#include "stats.h"
+#include "configuration.h"
+#include "geometry.h"
+
+
+/*
+#include "simplex.h"
+#include "simplexpool.h"
+#include "geometry.h"
+#include "mesh.h"
+#include "queuepair.h"
+#include "stats.h"
+#include "configuration.h"
+#include "plc.h"
+#include "collar.h"
+#include "intestine.h"
+#include "boundary.h"
+*/
